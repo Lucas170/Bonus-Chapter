@@ -253,6 +253,7 @@ int start() {
             if (Order == SIGNAL_CLOSESELL) {
                Ticket2 = OrderClose(OrderTicket(), OrderLots(), Ask, Slippage, DarkOrange);
                if (SignalMail) SendMail("[Signal Alert]", "[" + Symbol() + "] " + DoubleToStr(Ask, Digits) + " Close Sell");
+               IsTrade = False;
                
                // Optional TDL 11: Reset the Time Exit value (This is optional as time value will be re-initialised when a buy/sell signal is generated.)
                timeexit = 0;
