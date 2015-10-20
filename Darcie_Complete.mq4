@@ -134,7 +134,7 @@ int start() {
 
    // TDL 3: Calculate donchianWidth and ATR(20)
    
-   donchianWidth = donchianTop1 - donchianBottom2;
+   donchianWidth = donchianTop1 - donchianBottom1;
    atr_current = iATR(NULL, 0, atr_period, 1);    // ATR(20)
 
    // TDL 4: Initialise Closing Price Variables
