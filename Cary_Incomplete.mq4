@@ -25,6 +25,8 @@
    
       CARY POSITION SIZING RULE:
       2% of Capital risked per trade
+            
+      Assume running Cary on 1HR Timeframe
       
       Note you need to download and compile the custom indicator: Keltner_Channels.mq4
       

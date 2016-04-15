@@ -254,7 +254,7 @@ int start() {
    
    // TDL 4: Add all entry rules
    
-   if (TimeMonth(Time[0]) == TimeMonth(Time[1])) // if Yesterday and Today are in the same month aka we are not on the first day of the month
+   if (Day() != 1) // -> Credit to Evandro for this suggestion
    
    if (DayOfWeek() != 1) if (atr_current < atr_past) {
    
