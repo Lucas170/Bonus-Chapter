@@ -26,6 +26,8 @@
       FAITH POSITION SIZING RULE:
       2% of Capital risked per trade
       
+      Assume trading on 1HR Timeframe
+      
       Note you need to download and compile the custom indicator: Keltner_Channels.mq4
       
       13 TDLs in Total. Good Luck!
@@ -124,7 +126,7 @@ int start() {
    // TDL 3: Initialise ATRs
    
    atr_current = iATR(NULL, 0, atr_period, 1);    // ATR(20) now
-   atr_past = iATR(NULL, 0, atr_period, atr_shift);      // ATR(20) 10 periods ago
+   atr_past = iATR(NULL, 0, atr_period, atr_shift);      // ATR(20) 10 periods ago. Assumption: Trading on 1HR TF
    
    // TDL 11: Declare Stop Loss Exits
    
