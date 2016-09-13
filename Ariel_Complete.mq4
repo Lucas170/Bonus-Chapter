@@ -257,11 +257,10 @@ int start() {
       */
    
    // TDL 5: Add all entry rules
-   
-      if (sma_short > sma_long) {
-         if (close2 < entrydonchianTop2 && close1 >= entrydonchianTop1 ) Order = SIGNAL_BUY; // Rule to ENTER a Long trade 
-         if (close2 > entrydonchianBottom2 && close1 <= entrydonchianBottom1) Order = SIGNAL_SELL; // Rule to ENTER a Short trade
-      }
+
+   if (sma_short > sma_long) if (close2 < entrydonchianTop2 && close1 >= entrydonchianTop1 ) Order = SIGNAL_BUY; // Rule to ENTER a Long trade 
+   if (sma_short < sma_long) if (close2 > entrydonchianBottom2 && close1 <= entrydonchianBottom1) Order = SIGNAL_SELL; // Rule to ENTER a Short trade
+
    //+------------------------------------------------------------------+
    //| Signal End                                                       |
    //+------------------------------------------------------------------+
