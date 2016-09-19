@@ -154,7 +154,7 @@ int start() {
       Lots = NormalizeDouble(Lots, 2); // Round to 2 decimal place
    }
 
-   StopLevel = MarketInfo(Symbol(), MODE_STOPLEVEL) + MarketInfo(Symbol(), MODE_SPREAD); // Defining minimum StopLevel
+   StopLevel = (MarketInfo(Symbol(), MODE_STOPLEVEL) + MarketInfo(Symbol(), MODE_SPREAD)) / P; // Defining minimum StopLevel
 
    if (StopLoss < StopLevel) StopLoss = StopLevel;
    if (TakeProfit < StopLevel) TakeProfit = StopLevel;
