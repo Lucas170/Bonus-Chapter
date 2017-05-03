@@ -26,7 +26,7 @@
       Profit-Taking Exit 2: Exit the short trade when closing price moved down > 0.5 * Donchian(24) width.
       Stop Loss Exits: Exit when closing price move 2 * ATR(24) in the averse direction.
       
-      Stop Loss Exit: 2 ATR(20)
+      Stop Loss Exit: 2 ATR(24)
    
       DARCIE POSITION SIZING RULE:
       2% of Capital risked per trade

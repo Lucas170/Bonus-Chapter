@@ -27,7 +27,7 @@
       Profit-Taking Exit 2: Exit the short trade when closing price moved down > 0.5 * Donchian(24) width.
       Stop Loss Exits: Exit when closing price move 2 * ATR(24) in the averse direction.
       
-      Stop Loss Exit: 2 ATR(20)
+      Stop Loss Exit: 2 ATR(24)
    
       DARCIE POSITION SIZING RULE:
       2% of Capital risked per trade
@@ -130,7 +130,7 @@ int start() {
    // TDL 2: Initialise MAs
    
    sma_short = iMA(NULL, 0, smaPeriodShort, 0, 0, 0, 1);
-   sma_long = iMA(NULL, 0, smaPeriodLong, 0, 0, 0, 2);
+   sma_long = iMA(NULL, 0, smaPeriodLong, 0, 0, 0, 1);
 
    // TDL 3: Calculate donchianWidth and ATR(20)
    
