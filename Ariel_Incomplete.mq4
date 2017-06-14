@@ -22,8 +22,8 @@
       SMA(40) is less than SMA(80). This indicates that we are in a down trend.
       
       ARIEL EXIT RULES:
-      Profit-Taking Exit 1: Exit the long trade when closing price is equal to or crosses Donchian(10) lower bound from the top.
-      Profit-Taking Exit 1: Exit the short trade when closing price is equal to or crosses Donchian(10) upper bound from the bottom.
+      Profit-Taking Exit 1: Exit the long trade when closing price is equal to or crosses Donchian(20) lower bound from the top.
+      Profit-Taking Exit 1: Exit the short trade when closing price is equal to or crosses Donchian(20) upper bound from the bottom.
       Stop Loss Exit: Exit trade when closing price travelled 1 ATR in the adverse direction.
    
       ARIEL POSITION SIZING RULE:

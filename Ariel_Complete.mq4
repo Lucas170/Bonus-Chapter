@@ -22,8 +22,8 @@
       SMA(40) is less than SMA(80). This indicates that we are in a down trend.
       
       ARIEL EXIT RULES:
-      Profit-Taking Exit 1: Exit the long trade when closing price is equal to or crosses Donchian(10) lower bound from the top.
-      Profit-Taking Exit 1: Exit the short trade when closing price is equal to or crosses Donchian(10) upper bound from the bottom.
+      Profit-Taking Exit 1: Exit the long trade when closing price is equal to or crosses Donchian(20) lower bound from the top.
+      Profit-Taking Exit 1: Exit the short trade when closing price is equal to or crosses Donchian(20) upper bound from the bottom.
       Stop Loss Exit: Exit trade when closing price travelled 1 ATR in the adverse direction.
    
       ARIEL POSITION SIZING RULE:
@@ -57,7 +57,7 @@ extern int Risk = 1;
 // TDL 10: Declare Extern Variables
 
 extern string Donchian_variables;
-extern int Periods_Entry=20;
+extern int Donchian_Period=20;
 extern int Extremes=3;
 extern int Margins=-2;
 extern int Advance=0;
@@ -120,20 +120,20 @@ int start() {
 
    // TDL 1: Initialise Donchian indicators (Hint: Create 8 variables. 4 for entries and 4 for exits. You need to import the Donchian indicator using iCustom)
    
-   entrydonchianTop1 = iCustom(NULL, 0, "Donchian Channels", Periods_Entry, Extremes, Margins, Advance, max_bars, 1, 1);
-   entrydonchianTop2 = iCustom(NULL, 0, "Donchian Channels", Periods_Entry, Extremes, Margins, Advance, max_bars, 1, 2);
-   entrydonchianBottom1 = iCustom(NULL, 0, "Donchian Channels", Periods_Entry, Extremes, Margins, Advance, max_bars, 0, 1);
-   entrydonchianBottom2 = iCustom(NULL, 0, "Donchian Channels", Periods_Entry, Extremes, Margins, Advance, max_bars, 0, 2);
+   entrydonchianTop1 = iCustom(NULL, 0, "Donchian Channels", Donchian_Period, Extremes, Margins, Advance, max_bars, 1, 1);
+   entrydonchianTop2 = iCustom(NULL, 0, "Donchian Channels", Donchian_Period, Extremes, Margins, Advance, max_bars, 1, 2);
+   entrydonchianBottom1 = iCustom(NULL, 0, "Donchian Channels", Donchian_Period, Extremes, Margins, Advance, max_bars, 0, 1);
+   entrydonchianBottom2 = iCustom(NULL, 0, "Donchian Channels", Donchian_Period, Extremes, Margins, Advance, max_bars, 0, 2);
 
-   exitdonchianTop1 = iCustom(NULL, 0, "Donchian Channels", Periods_Entry, Extremes, Margins, Advance, max_bars, 1, 1);
-   exitdonchianTop2 = iCustom(NULL, 0, "Donchian Channels", Periods_Entry, Extremes, Margins, Advance, max_bars, 1, 2);
-   exitdonchianBottom1 = iCustom(NULL, 0, "Donchian Channels", Periods_Entry, Extremes, Margins, Advance, max_bars, 0, 1);
-   exitdonchianBottom2 = iCustom(NULL, 0, "Donchian Channels", Periods_Entry, Extremes, Margins, Advance, max_bars, 0, 2);
+   exitdonchianTop1 = iCustom(NULL, 0, "Donchian Channels", Donchian_Period, Extremes, Margins, Advance, max_bars, 1, 1);
+   exitdonchianTop2 = iCustom(NULL, 0, "Donchian Channels", Donchian_Period, Extremes, Margins, Advance, max_bars, 1, 2);
+   exitdonchianBottom1 = iCustom(NULL, 0, "Donchian Channels", Donchian_Period, Extremes, Margins, Advance, max_bars, 0, 1);
+   exitdonchianBottom2 = iCustom(NULL, 0, "Donchian Channels", Donchian_Period, Extremes, Margins, Advance, max_bars, 0, 2);
    
    // TDL 2: Initialise MAs
    
    sma_short = iMA(NULL, 0, smaPeriodShort, 0, 0, 0, 1);
-   sma_long = iMA(NULL, 0, smaPeriodLong, 0, 0, 0, 2);
+   sma_long = iMA(NULL, 0, smaPeriodLong, 0, 0, 0, 1);
 
    // TDL 3: Calculate ATR(20)
    
